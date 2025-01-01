@@ -1,0 +1,7 @@
+template-file-path: template.yml
+parameters:
+  OLLAMA_BASE_URL: 127.0.0.1
+  OPEN_WEBUI_CONTAINER_IMAGE: ghcr.io/open-webui/open-webui:cuda
+  GPU: all
+tags:
+  ENV: dev
