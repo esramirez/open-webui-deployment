@@ -97,19 +97,3 @@ resource "aws_security_group" "dev_sg" {
   }
 }
 
-# EC2 Instance
-resource "aws_instance" "dev_instance" {
-  ami           = "ami-04b4f1a9cf54c11d0" # Ubuntu Server 24.04 LTS (HVM), SSD Volume Type
-  instance_type = var.instance_type
-  key_name      = var.key_name
-  subnet_id     = aws_subnet.public_subnet.id
-  security_groups = [aws_security_group.dev_sg.id]
-
-  tags = {
-    Name = "dev_instance"    
-    created_by  = "terraform"
-    env         = "development"
-    cost_center = "1234"
-    delete_by   = "06012025"
-  }
-}
